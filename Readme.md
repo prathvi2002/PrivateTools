@@ -16,7 +16,7 @@ The tool, named 'DomainHarvester,' is designed to extract domains and subdomains
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/yourusername/DomainHarvester.git
+    git clone https://github.com/prathvi2002/PrivateTools/DomainHarvester
     ```
 
 2. **Navigate to the Project Directory:**
