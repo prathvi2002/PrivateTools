@@ -49,3 +49,20 @@ Run the following command to execute the `domain_harvester.py` script with a tex
 
 ```bash
 python domain_harvester.py urls.txt
+
+
+Domains found in https://example1.com:
+ - example1.com
+ - subdomain1.example1.com
+
+Domains found in https://example2.com:
+ - example2.com
+
+Domains found in https://example3.com:
+ - example3.com
+
+All unique domains and subdomains:
+ - example1.com
+ - subdomain1.example1.com
+ - example2.com
+ - example3.com
