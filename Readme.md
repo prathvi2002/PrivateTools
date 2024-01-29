@@ -43,3 +43,9 @@ https://example2.com
 https://example3.com
 
 
+## Usage
+
+Run the following command to execute the `domain_harvester.py` script with a text file containing a list of URLs:
+
+```bash
+python domain_harvester.py urls.txt
