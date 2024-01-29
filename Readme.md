@@ -41,3 +41,7 @@ Suppose you have a file named `urls.txt` with the following content:
 https://example1.com
 https://example2.com
 https://example3.com
+
+
+python domain_harvester.py urls.txt
+
