@@ -43,5 +43,3 @@ https://example2.com
 https://example3.com
 
 
-python domain_harvester.py urls.txt
-
