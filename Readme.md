@@ -6,7 +6,7 @@ The tool, named 'DomainHarvester,' is designed to extract domains and subdomains
 
 ## Features
 
-- Extracts domains and subdomains from a list of URLs.
+- Extract domains and subdomains from the source code of a list of URLs.
 - Utilizes web scraping techniques to fetch HTML content.
 - Identifies and extracts unique domains and subdomains.
 - Outputs results to the terminal.
