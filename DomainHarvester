@@ -1,0 +1,53 @@
+import sys
+import requests
+from bs4 import BeautifulSoup
+import re
+
+def extract_domains_from_url(url):
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, 'html.parser')
+            # Extracting domains and subdomains using a regular expression
+            domains = re.findall(r'https?://([a-zA-Z0-9.-]+)', str(soup))
+            return domains
+        else:
+            print(f"Failed to fetch content from {url}. Status code: {response.status_code}")
+    except Exception as e:
+        print(f"Error occurred while processing {url}: {str(e)}")
+
+def main():
+    # Check if a file path is provided as a command-line argument
+    if len(sys.argv) != 2:
+        print("Usage: python script.py path/to/url_file.txt")
+        sys.exit(1)
+
+    # Extract file path from command-line arguments
+    file_path = sys.argv[1]
+
+    try:
+        with open(file_path, 'r') as file:
+            # Read URLs from the file
+            urls = [line.strip() for line in file if line.strip()]
+    except FileNotFoundError:
+        print(f"File not found: {file_path}")
+        sys.exit(1)
+
+    all_domains = []
+
+    for url in urls:
+        domains = extract_domains_from_url(url)
+        if domains:
+            print(f"\nDomains found in {url}:")
+            for domain in domains:
+                print(f" - {domain}")
+            all_domains.extend(domains)
+
+    print("\nAll unique domains and subdomains:")
+    unique_domains = list(set(all_domains))
+    for domain in unique_domains:
+        print(f" - {domain}")
+
+if __name__ == "__main__":
+    main()
+
