@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# This script will read each domain from the pipe input and perform DNS queries to fetch their IPv4 and IPv6 addresses, printing the results for each domain.
+# This script will read each domain from the pipe input and perform A and AAAA DNS queries to fetch their IPv4 and IPv6 addresses, printing the results for each domain.
 #
 
 # Function to fetch IPv4 address for a domain
