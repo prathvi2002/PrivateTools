@@ -1,6 +1,6 @@
 #!/bin/python3
 
-# This tool performs DNS lookups for domain names provided via standard input and prints the first resolved IP address for each domain. It first checks for the IPv4 address (A record) of each domain. If the IPv4 address is not found, it then checks for the IPv6 address (AAAA record). If neither IPv4 nor IPv6 addresses are found, it moves to the next domain.
+# This tool performs DNS lookups for domain names provided via standard input and prints the first resolved IP address for each domain. It prioritizes checking for the IPv4 address (A record) of each domain. If the IPv4 address is found, it prints it and moves to the next domain without checking for the IPv6 address. Only if the IPv4 address is not found, it then checks for the IPv6 address (AAAA record). If neither IPv4 nor IPv6 addresses are found, it moves to the next domain.
 
 import subprocess
 import sys
