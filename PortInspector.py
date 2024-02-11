@@ -13,7 +13,7 @@ def run_nmap(ip):
         is_ipv6 = ':' in ip
         # Run the provided nmap command
         #nmap_command = f"nmap -p- {'-6 ' if is_ipv6 else ''}{ip} | awk -F/ '/[0-9]+\/tcp/{{print $1}}'"
-        nmap_command = f"nmap -p- -Pn {'-6 ' if is_ipv6 else ''}{ip} | awk -F/ '/[0-9]+\/tcp/{{printf \"%s%s\", sep, $1; sep=\",\"}} END {{printf \"\"}}'"
+        nmap_command = f"nmap -p- {'-6 ' if is_ipv6 else ''}{ip} | awk -F/ '/[0-9]+\/tcp/{{printf \"%s%s\", sep, $1; sep=\",\"}} END {{printf \"\"}}'"
         nmap_output = subprocess.check_output(nmap_command, shell=True).decode().strip()
         return nmap_output
     except subprocess.CalledProcessError as e:
