@@ -28,6 +28,8 @@ if __name__ == "__main__":
             # Run nmap command for the IP address
             result = run_nmap(ip)
             # Print domain and nmap results
-            print(f"{domain} {result}")
+            #print(f"{domain} {result}")
+            print(f"{domain} \033[94m{result}\033[0m")
+
         else:
             print(f"Skipping invalid input: {line.strip()}")
