@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# reflection detection in http response headers
 # This script reads each URL, modifies it according to the specified conditions, makes a curl request to the modified URL, and checks if the random strings are present in the response headers. If found, it prints the relevant details to the terminal.
 # These are those specified conditions: If the URL contains query parameters, replace each parameter value with a randomly generated string. If the URL is the root URL (ends with /), append a randomly generated string to the URL path. If the URL is an endpoint without query parameters, append / followed by a randomly generated string to the endpoint path.
 
