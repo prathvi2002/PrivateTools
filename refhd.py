@@ -48,7 +48,7 @@ def modify_url(url):
 def make_curl_request(url):
     """Make a curl request to the given URL and return the response headers."""
     try:
-        result = subprocess.run(['curl', '-s', '-I', url], capture_output=True, text=True)
+        result = subprocess.run(['curl', '-k', '-s', '-I', url], capture_output=True, text=True)
         return result.stdout
     except Exception as e:
         return f"Error: {e}"
