@@ -1,5 +1,8 @@
 # The script removes query parameters from URLs, appends a random string after a '/', makes a curl request, and checks if the random string is present in the response.
 
+# get the urls having query parameters 
+# cat urls.txt | grep = > urls2.txt
+
 # cat results.txt | grep "Random string"
 
 import subprocess
