@@ -1,5 +1,5 @@
 # This script will process multiple URLs concurrently, modify them as required, and check for the presence of specified random strings in the response body. Adjust the max_workers parameter in ThreadPoolExecutor to control the level of concurrency.
-# Modifies the URLs based on specified conditions: replace query parameter values, append random strings to root URLs, or add a random segment to endpoint paths without query parameters. Additionally, add fragments (#<random-string>) to check for reflection, preserving original query parameter values.
+# Modifies the URLs based on specified conditions: replace query parameter values, append random strings to root URLs, removes the query parameters and adds a random string at the end of the endpoint, or add a random segment to endpoint paths without query parameters. Additionally, add fragments (#<random-string>) to check for reflection, preserving original query parameter values.
 
 # refbd2.py urls.txt | tee results.txt
 # cat results.txt | grep "Random string"
@@ -36,6 +36,11 @@ def modify_url(url):
         fragment_string = generate_random_string()
         random_strings.append(fragment_string)
         modified_urls.append(parsed_url.geturl() + f"#{fragment_string}")
+
+        # Removing query parameters and adding a random string to the endpoint
+        random_segment = generate_random_string()
+        random_strings.append(random_segment)
+        modified_urls.append(parsed_url._replace(query="").geturl().rstrip('/') + f"/{random_segment}")
 
     if path == '/':
         # Condition 2: URL is the root URL
