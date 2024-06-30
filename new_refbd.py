@@ -5,7 +5,7 @@
 
 # also handle URL endpoints (i.e., http://example.com/main/shop/ or http://example.com/main/shop) by appending a "?" and a random string in the format http://example.com/main/shop/?<random-string> | http://example.com/main/shop/<random-string>?.
 
-# also modify URLs by removing query parameters and appending random segments in formats /?<random-segment> and /<random-segment>, then make requests to these modified URLs.
+# also modify URLs by removing query parameters and appending random segments in formats /?<random-segment> and /<random-segment>, then make requests to these modified URLs. https://example.com/main/go/?name=alex&age=19 -> https://example.com/main/go/?<random-segment> AND https://example.com/main/go/<random-segment>
 
 # refbd.py urls.txt | tee results.txt
 # cat results.txt | grep "Random string"
