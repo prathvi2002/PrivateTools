@@ -1,4 +1,5 @@
 # THIS DO NOT modify URLs by removing query parameters, appending a randomly generated segment in formats /?<random-segment> and /<random-segment>. For the workaround of this limitation get all the urls with query parameters, remove the query parameters from those urls and add these urls without query parameters in the file with urls.
+# THIS DO NOT modify URLs by appending a random string after the last query parameter in the URL if it contains query parameters. If the original URL is https://example.com/main/go?name=alex&age=12, it won't be modified to https://example.com/main/go?name=alex&age=12&<random-string>.
 
 # This script will process multiple URLs concurrently, modify them as required, and check for the presence of specified random strings in the response body. Adjust the max_workers parameter in ThreadPoolExecutor to control the level of concurrency.
 # Modify the URLs based on specified conditions: replace query parameter values, append random strings to root URLs, or add a random segment to endpoint paths without query parameters.
